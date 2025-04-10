@@ -20,14 +20,9 @@
     --color-zinc-600: #525252;
     --color-zinc-700: #404040;
     --color-zinc-800: #e6e7e0;
-    --color-zinc-900: #060820;
+    --color-zinc-900: #101828;
     --color-zinc-950: #0a0a0a;
-/* 
-    .color1 {color: #060820;}
-.color2 {color: #363748;}
-.color3 {color: #6f7178;}
-.color4 {color: #aaaaaa;}
-.color5 {color: #e6e7e0;} */
+
 
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
