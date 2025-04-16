@@ -39,8 +39,24 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
         RateLimiter::clear($this->throttleKey());
         Session::regenerate();
+        $user = Auth::user();
+        $rol = $user->roles_id;
+        switch($rol){
+            case 1:
+                $this->redirectIntended(default: route('dashboard-admin', absolute: false), navigate: true);
+            break;
+            case 2:
+                $this->redirectIntended(default: route('dashboard-aux', absolute: false), navigate: true);
+            break;
+            case 3:
+                $this->redirectIntended(default: route('dashboard-auditor', absolute: false), navigate: true);
+            break;
+            case 4:
+                $this->redirectIntended(default: route('dashboard-user', absolute: false), navigate: true);
+            break;
+        }
 
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+       
     }
 
     /**
@@ -125,10 +141,10 @@ new #[Layout('components.layouts.auth')] class extends Component {
                         </div>
                     </form>
                     @if (Route::has('register'))
-                        <!-- <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-500">
+                        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-500">
                             {{ __('Don\'t have an account?') }}
                             <flux:link :href="route('register')" wire:navigate>{{ __('Sign up') }}</flux:link>
-                        </div> -->
+                        </div>
                     @endif
                 </div>
             </div>

@@ -1,5 +1,5 @@
-<x-layouts.app :title="__('Dashboard')">
+<x-layouts.auditor :title="__('Dashboard-auditor')">
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
        
     </div>
-</x-layouts.app>
+</x-layouts.auditor>
